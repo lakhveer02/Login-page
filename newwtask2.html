@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .main {
+            width: 300px;
+            background-color: rgb(232, 230, 230);
+            margin: auto;
+            text-align: center;
+            color: black;
+            padding: 20px;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        #boxes {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            margin-left: 50px;        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+    <div class="win">
+        <div>
+            Choose A Color
+        </div>
+        <div>
+            <input type="text" id="colorInput">
+        </div>
+        <div>
+            <button type="button" class="btn" onclick="addColor()">Add</button>
+        </div>
+
+        <div class="box" id="boxes"></div>
+        <p id="mp"></p>
+    </div>
+  </div>
+
+    <script>
+        function addColor() {
+            const colorInput = document.getElementById("colorInput").value;
+            const boxesContainer = document.getElementById("boxes");
+            boxesContainer.style.backgroundColor = colorInput;
+
+            if (document.getElementById("colorInput").value == "") {
+                 document.getElementById("mp").innerHTML = "Please enter  color";
+                
+            }else if (colorInput == "") {
+        document.getElementById("mp").innerHTML = "";
+    } else {
+        document.getElementById("mp").innerHTML = "Invalid color format.";
+    }
+}
+
+            
+    //         if (document.getElementById(colorInput).value !== "") {
+    //             document.getElementById("mp").innerHTML = "Please enter  color";
+    // }
+    
+    // if (colorInput.value.length > &&  document.getElementById("mp").innerHTML  "Invalid color" );
+    //  {
+    //   passwordError.textContent = "done";
+    // } else()
+        
+         
+        
+         //  else if (document.getElementById("colorInput").value === "") { 
+                
+            //  }
+            //  else {
+            //     document.getElementById("mp").innerHTML = "done";
+            //  }
+
+
+            
+    </script>
+</body>
+
+</html>

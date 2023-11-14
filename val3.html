@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+      .box{
+        height: 200px;
+        width: 200px;
+      }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>
+            Choose A Color
+        </div>
+        <div>
+            <input type="text" id="colorInput">
+        </div>
+        <div>
+            <button type="button" class="btn" onclick="addColor()">Add</button>
+        </div>
+        <div id="boxes">
+            <div class="box"></div>
+        </div>
+        <p id="mp"></p>
+    </div>
+    <script>
+        function addColor() {
+    const colorInput = document.getElementById("colorInput").value;
+    const boxes = document.getElementsByClassName("box");
+ 
+    if (/^#[0-9A-Fa-f]{6}$/.test(colorInput)) {
+        for (let box of boxes) {
+            box.style.backgroundColor = box;
+        }
+        document.getElementById("mp").innerHTML = "Color applied!";
+    } else if (/^[a-zA-Z]+$/.test(colorInput)) {
+        for (let box of boxes) {
+            box.style.backgroundColor = box;
+        }
+        document.getElementById("mp").innerHTML = "Color applied!";
+    } else if (colorInput == "") {
+        document.getElementById("mp").innerHTML = "Please enter a color";
+    } else {
+        document.getElementById("mp").innerHTML = "Invalid color format.";
+    }
+}
+
+    </script>
+</body>
+</html>

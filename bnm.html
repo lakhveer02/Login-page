@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .alignCenter {
+            text-align: center;
+        }
+
+        input,
+        button {
+            padding: 5px;
+        }
+
+        #boxes div {
+            /* background-color: red; */
+            margin: 5px;
+            border-radius: 5px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .mm {
+            text-align: center;
+        }
+
+        .tt {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 40px;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mm">
+        <input type="number" id="box" placeholder="Enter number">
+        <div class="aligncenter">
+            <button type="button" class="btn" onclick="generatebox()">GenerateBoxes</button>
+        </div>
+        <div class="tt" id="boxes"></div>
+    </div>
+</body>
+<script>
+    function generatebox() {
+        let box = document.getElementById("box");
+        let box1 = document.getElementById("boxes");
+        let count = parseInt(box.value);
+        {
+            let top = box1.childElementCount + 1;
+            for (p = 0; p < count; p++) {
+                let data1 = document.createElement("div");
+                data1.className = "box";
+                data1.textContent = top;
+                data1.style.height = "293px";
+                data1.style.width = "293px";
+                data1.style.border = "none";
+                data1.style.backgroundColor = getrandomcolor();
+                data1.style.margin = "5px 5px";
+                data1.style.textAlign = "center"
+                data1.style.alignItems = "center"
+                data1.style.display = "inline-flex"
+                data1.style.justifyContent = "center"
+                data1.style.color = "white"
+                data1.style.fontSize = "45px"
+                box1.appendChild(data1);
+                top++;
+            }
+        }
+    }
+
+    function getrandomcolor() {
+        const letter = "0123456789ABCDEF";
+        let color = "#";
+
+        for (let i = 0; i < 6; i++) {
+            color += letter[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+    }
+</script>
+
+</html>

@@ -1,0 +1,507 @@
+
+  
+
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing:border-box ;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'DynaPuff', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Romanesco', cursive;
+
+}
+a{
+    text-decoration: none;
+}
+ .main{
+    background-color: white;
+    color: white(240, 248, 255);
+    display: flex;
+    text-align: center;
+    gap: 30px;
+    justify-content: space-between;
+}
+.dd{
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right:50px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+}
+.html5{
+    justify-content: space-between;
+   margin-top: 200px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+
+   
+}
+
+.license{
+    justify-content: space-between;
+   margin-top: 50px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+}
+.button{
+    justify-content: space-between;
+   margin-top: 100px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+    /* box-shadow: none;  transition: all 2s infinite ; */
+}
+/* .button:hover{
+    background-color: aliceblue;
+
+}
+     */
+   
+
+.teli{
+    border-left:2px solid white ;
+    border-right: 2px solid white;
+    border-bottom: 1px solid white;
+
+}
+.promo{
+    background-image: url("./preet/imgs/promo.jpg");
+    max-width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    margin-left: 60px;
+    margin-right: 60px;
+    border-radius: 2% ;
+    margin-top: 70px;
+    
+}
+.gap{
+    border: 2px solid rgb(225, 219, 219);
+    margin: auto;
+    height: 100px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+   background: rgba(255,255,255,0.05);
+   position: absolute;
+   top: 1550px;
+   left: 140px;
+}
+
+.et{
+    margin-top: 5px;
+    justify-content: space-between;
+    text-size-adjust: 5px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+.the{  
+    height: 40px;
+    width: 300px;
+    font-size: 25px;
+}
+
+.my{
+    margin-top: 30px;
+    height: 30px;
+    width: 170px;
+    
+}
+.button button{
+    background-color: transparent;
+    color: blanchedalmond;
+  height: 40px;
+  font-size: 20px;
+  width: 300px;
+}
+
+.html5 h1{
+    color: white;
+}
+.menu-sec a{
+    font-size: 30px;
+    gap: 10px;
+    margin-left: 15px;
+}
+.dd{
+    text-align: cenetr;
+    margin-left: 50px;
+    gap:50px ;
+    
+}
+.dd a{
+    padding: 30px;
+}
+.aa{
+    background-color: red;
+    gap: 10px;
+    margin-left: 15px;
+}
+.share_btn{
+    background-color: tomato;
+}
+.bb{
+
+    gap: 10px;
+    margin-right: 15px;
+}
+.main2{
+    /* display: flex; */
+    /* gap: 30px;  */
+}
+.hero{
+    height: 700px;
+    width: 100%;
+     background-color: rgb(0,30, 90);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover ;
+}
+.hero .buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 200px;
+    color: white;
+}
+.hero .buttons a{
+    text-decoration: none;
+    color: white;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+height: 20px;
+width: 170px;  
+}
+
+  
+  .dropdown-btn {
+     
+    color: #cf2c2c;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #821919;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content li {
+    display: block;
+    height: 40px;
+    width: 170px;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #211b1b;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .nested-dropdown {
+    position: relative;
+  }
+  
+  .nested-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #4b1212;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .nested-dropdown:hover .nested-dropdown-content {
+    display: block;
+  }
+ 
+.lakh{
+    
+    justify-content: space-between;
+}
+.boy .vel{
+    align-items: center;
+    /* margin: auto; */
+}
+.boy{
+     justify-content: space-between;
+     /* margin-top: 140px; */
+     /* margin-left: 80px;    */
+    display: flex;
+    /* align-items: center; */
+    text-align: center;
+    margin: 100px 100px;
+    
+}
+
+
+.img{
+   gap: 30px;
+   /* margin-right: 140px; */
+   /* margin-left: 40px; */
+   justify-content: space-between;
+   }
+   .img p{
+    font-size: 70px;
+   }
+.bb{
+    color: black;
+}
+.a{
+    text-decoration: none;
+    display: flex;
+     row-gap: 30px;   
+    justify-content: center;
+}
+.elit{
+    text-align: center;
+    margin-top: 80px;
+    font-size: 30px;
+}
+.same{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #f35858;
+}
+.jp{
+    
+    margin-left: 60px;
+    height: 30px;
+    width: 170px;
+    text-align: center;
+
+}
+.jp p{
+    text-align: center;
+    width: 343px;
+}
+.pic04{
+    margin-left:350px;
+    height: 30px;
+    width: 170px;
+    text-align: center;
+
+}
+
+.img2{
+ margin-top: 80px;
+    margin-right: 800px; 
+    /* margin-left: 40px; */
+    justify-content: space-between;
+    display: flex;
+ }
+ 
+.img2 p{
+    text-align: center;
+    width: 343px;
+}
+.pic05{
+    margin-left:350px ;
+    height: 30px;
+    width: 170px;
+    text-align: center;
+
+}
+
+.elevate{
+    margin-left: 620px;
+   margin-top: 300px;
+    gap: 60px;
+    text-align: center;
+    color: rgb(14, 13, 13);
+    /* box-shadow: none;  transition: all 2s infinite ; */
+    
+    height: 40px;
+    width: 270px;
+    font-size: 20px;
+}
+.overlay{
+    
+    margin-top: 70px;
+    background-image: url(./preet/imgs/overlay.png);
+    
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+.dolor{
+    padding-top:90px;
+    position: relative;
+    margin-top: 80px;
+    text-align: center;
+
+}
+.dolor .head{
+    font-size: 40px;
+    margin-top:20px;
+}
+.amet{
+    color: tomato;
+    font-size: 30px;
+}
+.name{
+     display: flex; 
+    width: 500px;
+    text-align: center;
+    padding-top: 70px;
+    /* background-color: aliceblue ; */
+    margin-left: 70px;
+    
+}
+.name input{
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+}
+.name textarea{
+    width: 400px;
+    margin-top: 50px;
+}
+.massage{
+    margin-left: 5px; 
+    margin-top: 40px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    justify-content: center;
+
+    
+}
+.massage:hover {
+	color: red;
+}
+.clear:hover {
+	color: red;
+}
+.clear{
+    margin-left: 20px; 
+    margin-top: 40px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    justify-content: center;
+}
+.tweet{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar{
+    display: flex;
+    margin-left: 50px;
+    padding: 10px;
+
+}
+
+.navbar ul li{
+font-size: 20px;
+    display: inline-block;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.links{
+
+margin-left: 400px;
+font-size: 20px;
+}
+.like{
+    display: inline-block;
+    height: 30px;
+    width: 70px;
+}
+.back{
+    display: inline-block;
+    height: 30px;
+    width: 70px;
+}
+.bac{
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+}
+.mail{
+    margin-left: 20px;
+}
+.text{
+    margin-top: 10px;
+    margin-left: 4.7%;
+    border-radius: 9px;
+}
+.text textarea{
+    width: 416px;
+    border-radius: 5px;
+}
+.kk{
+    margin-left: 600px;
+    margin-top: -20%;
+    
+    
+}
+.kk ul{
+    list-style: none;
+    font-size: 40px;
+}
+ .kk i{
+    padding: 10px;
+    margin-top: 20px;
+ }
+ 
+.com{
+    font-size: 20px;
+}
+
+.mm{
+    margin-left: 300px;
+    margin-top: -25%;
+    margin-right: 200px;
+    
+}
+.mm ul{
+    list-style: none;
+    font-size: 40px;
+}
+.copy{
+    margin-top: 170px;
+    text-align: center;
+    height: 50px;
+    margin-left: -260px;
+    width: 100%;
+}
+.copy span{
+     padding: 20px; 
+    font-size: 20px;
+    color: gray;
+}
+.copy a{
+    text-decoration: none;
+    color: gray;
+    transition: all 2s inherit;
+}
+.copy a:hover{
+    color: rgb(225, 0, 100);
+}
+

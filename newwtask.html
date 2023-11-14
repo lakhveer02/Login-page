@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <div class="main">
+        <div class="win">
+            <div>
+                Choose A Color
+            </div>
+            <div>
+                <input type="text" id="colorInput">
+            </div>
+            <div>
+                <button type="button" class="btn" onclick="addColor()">Add</button>
+            </div>
+
+            <div class="boxes" id="boxes"></div>
+            <p id="mp"></p>
+        </div>
+    </div>
+
+    <script>
+        function addColor() {
+            const colorInput = document.getElementById("colorInput").value;
+            const boxesContainer = document.getElementById("boxes");
+
+            
+            if (colorInput.trim() === "") {
+                document.getElementById("mp").textContent = "Please enter a color";
+                boxesContainer.innerHTML = ""; 
+                return;
+            }
+
+        
+            if (!isValidColor(colorInput)) {
+                document.getElementById("mp").textContent = "Invalid color";
+                boxesContainer.innerHTML = ""; 
+                return;
+            }
+
+            
+            const newBox = document.createElement("div");
+            newBox.style.backgroundColor = colorInput;
+            newBox.className = "box";
+            boxesContainer.appendChild(newBox);
+
+            document.getElementById("mp").textContent = "Color added!";
+        }
+
+        function isValidColor(color) {
+            const namedColorPattern = /^[a-zA-Z]+$/; 
+            const hexColorPattern = /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/; 
+
+            return namedColorPattern.test(color) || hexColorPattern.test(color);
+        }
+    </script>
+</body>
+</html>

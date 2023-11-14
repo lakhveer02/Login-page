@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <div class="body">
+    <section>
+       
+        </div>
+    </section>
+    </div>
+    <script>
+        
+var items = [
+    {
+        name: "vishal",
+        image: "preet/imgs/pic01.jpg",
+        description: "Lorem ipsum dolor sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit ",
+    },
+     {
+        name: "deep",
+        image: "preet/imgs/pic02.jpg",
+        description: "Lorem ipsum dolor sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit ",
+    },
+    {
+        name: "aman",
+        image: "preet/imgs/pic03.jpg",
+        description: "Lorem ipsum dolor sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit ",
+    },
+   
+     {
+        name: "wind",
+        image: "preet/imgs/pic04.jpg",
+        description: "Lorem ipsum dolor sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit ",
+    },
+   {
+        name: "reet",
+        image: "preet/imgs/pic05.jpg",
+        description: "Lorem ipsum dolor sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit ",
+    },
+     {
+        name: "jeet",
+        image: "preet/imgs/jj.jpg",
+        description: "Lorem ipsum dolor sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit sit amet consecture et sed adipicing elit Curabiotur vel sem sit dolor sit amet consectetur et sit ",
+    },
+   
+    
+];
+         var section = document.querySelector("section");
+        items.forEach(item => {
+            var itemDiv = createItemDiv(item);
+            section.appendChild(itemDiv);
+        });
+
+        function createItemDiv(item) {
+            var itemDiv = document.createElement("div");
+            itemDiv.classList.add("boy");
+
+            var velDiv = document.createElement("div");
+            velDiv.classList.add("vel");
+
+            var img = document.createElement("img");
+            img.src = item.image;
+            img.alt = item.name;
+            img.classList.add("img");
+
+            var h1 = document.createElement("h1");
+            h1.textContent = item.name;
+
+            var p = document.createElement("p");
+            p.textContent = item.description;
+        }
+            </script>
+</body>
+
+</html> 

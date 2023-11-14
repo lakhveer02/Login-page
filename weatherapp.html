@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgb(123, 184, 104), rgb(13, 87, 10));
+            font-size: 2rem;
+            font-family: sans-serif;
+            color: rgb(7, 9, 10);
+        }
+        .container {
+            height: 22rem;
+            width: 18rem;
+            background-color: rgb(192, 223, 130);
+            text-align: center;
+            padding-top: 12px;
+            border-radius: 16px;
+            border: 2px solid rgb(14, 43, 1);
+        }
+
+        .icon img {
+            max-width: 100%;
+        }
+        .location {
+            font-size: 1.5rem;
+            margin-top: 8px;
+        }
+        #location-input{
+            border: solid rgba(35, 35, 35, 0.941) 2px;
+            border-radius: 3px;
+            width: 11rem;
+            height: 1.4rem;
+            /* box-shadow: grey 50 ,50,0,50; */
+            /* background-color:; */
+            /* color: white; */
+        }
+        #search-button{
+            background-color: black;
+            color: white;
+            border: solid rgba(139, 200, 214, 0.941) 2px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="location-input" placeholder="Enter a location">
+            <button id="search-button">Search</button>
+        </div>
+        <div class="icon"> <img src="" alt="Weather Icon" style="height: 10rem;" /></div>
+        <div class="temp">-°C</div>
+        <div class="summary">---</div>
+        <div class="location"></div>
+    </div>
+
+
+    <script>
+        let lon;
+        let lat;
+        let temperature = document.querySelector(".temp");
+        let summary = document.querySelector(".summary");
+        let loc = document.querySelector(".location");
+        let icon = document.querySelector(".icon img");
+        const kelvin = 273;
+  
+        function fetchWeatherDataByLocation(location) {
+            const api = "6d055e39ee237af35ca066f35474e9df";
+            const base = `http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api}`;
+
+            fetch(base)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log(data);
+                    temperature.textContent =
+                        Math.floor(data.main.temp - kelvin) + "°C";
+                    summary.textContent = data.weather[0].description;
+                    loc.textContent = data.name + "," + data.sys.country;
+                    let icon1 = data.weather[0].icon;
+                    icon.src = `http://openweathermap.org/img/w/${icon1}.png`;
+                })
+                .catch((error) => {
+                    console.error("Error fetching data:", error);
+                        });
+                  }
+                  const searchButton = document.getElementById("search-button");
+        searchButton.addEventListener("click", () => {
+            const locationInput = document.getElementById("location-input").value;
+            if (locationInput) {
+                fetchWeatherDataByLocation(locationInput);
+            }
+        });
+
+       
+        window.addEventListener("load", () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    console.log(position);
+                    lon = position.coords.longitude;
+                    lat = position.coords.latitude;
+
+                    const api = "6d055e39ee237af35ca066f35474e9df";
+                    const base =
+                        `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&` +
+                        `lon=${lon}&appid=${api}`;
+
+                    fetch(base)
+                        .then((response) => {
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log(data);
+                            temperature.textContent =
+                                Math.floor(data.main.temp - kelvin) + "°C";
+                            summary.textContent = data.weather[0].description;
+                            loc.textContent = data.name + "," + data.sys.country;
+                            let icon1 = data.weather[0].icon;
+                            icon.src = `http://openweathermap.org/img/w/${icon1}.png`;
+                        });
+                });
+            }
+        });
+            </script>
+</body>
+</html>

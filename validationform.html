@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+    
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+    
+        p {
+            margin: 5px 0;
+            color: red;
+            font-size: 12px;
+        }
+    
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    
+</head>
+<body>
+    <form action="" autocomplete="off" id="myform" >
+        <label for="name">name</label>
+        <input type="text" id="name" name="name" oninput="validateForm()" placeholder="user name">
+        <p id="na"></p> 
+        <label for="email">email address</label>
+        <input type="text" id="email" name="email"  oninput="validateEmail()" placeholder="Enter your email">
+        <p id="ma"></p>
+        <label for="password">password</label>
+        <input type="password" id="password" name="password"  oninput="validatePassword()" placeholder="enter your password">
+        <p id="oa"></p>
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        const na = document.getElementById('na'); 
+        const ma = document.getElementById('ma'); 
+        const oa = document.getElementById('oa'); 
+
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            if (name.trim() === "") {
+                na.innerText = "Name is required";
+            } else if (name.length < 3) {
+                na.innerText = "Name is too short"; 
+            } else {
+                na.innerText = ""; 
+            }
+        }
+        
+        function validateEmail() {
+            const email = document.getElementById('email').value; 
+            if (email.trim() === "") {
+                ma.innerText = "Email is required";
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                ma.innerText = "Enter a valid email"; 
+            } else {
+                ma.innerText = ""; 
+            }
+        }
+        
+        function validatePassword() {
+            const password = document.getElementById('password').value; 
+            if (password.trim() === "") {
+                oa.innerText = "Password is required";
+            }else if (password.length < 8) {
+                oa.innerText = "password is too short"; 
+            } else {
+                oa.innerText = ""; 
+            }
+        }
+    </script>
+</body>
+</html>

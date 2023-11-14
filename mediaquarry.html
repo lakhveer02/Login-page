@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        * body{
+            margin: 10 auto;
+        }
+.navbar a {
+    text-decoration: none;
+    color: darkmagenta;
+    
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: purple; 
+}
+
+
+#searchInput {
+    width: 240px;
+    border-radius: 4px;
+    border: solid 3px rgb(125, 165, 202); 
+}
+#texterror{
+    color: red;
+    font-size: 10px;
+}
+.li li a{
+    text-decoration: none;
+    color: darkmagenta;
+}
+
+.navbar {
+    background-color: #d1d6d5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px; 
+}
+.navbar ul {
+    list-style: none;
+    margin: 0 auto; 
+    padding: 0; 
+    display: flex;
+}
+.navbar ul li {
+    margin-right: 40px;
+}
+.contenior{
+    display: flex;
+
+}
+p{
+    margin: 20px;
+}
+img{
+    margin: 20px;
+    width: auto ;
+    height:auto;
+}@media screen and (min-width:900px) and (max-width:1440px ){
+    .contenior{
+        display: flex;
+    } 
+.contenior img{
+    margin: 10px;
+    width: auto;
+    height: auto;
+}
+
+.contenior p{
+    color: red;
+    text-align: initial;
+    font-size: 20px;
+}
+}
+@media screen and (min-width:700px)and (max-width:899px){
+    .contenior{
+        display: block;
+        margin: 0 auto;
+    }
+.contenior img{
+    padding: 20px;
+    /* margin: 0 auto; */
+}
+.contenior p{
+    color: gray;
+    text-align: initial;
+    font-size: 20px;
+}
+}
+
+@media screen and (max-width: 1080px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+    </style>
+</head>
+<body class="">
+    
+    <section>
+        <div class="navbar">
+            <ul class="li">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li>
+                    <input type="text" id="searchInput" placeholder="Search by Name"
+                        oninput="handleChange()" autocomplete="off" />
+                    <span id="texterror"></span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="contenior">
+    <div>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore facilis optio voluptas, est quisquam esse magnam, recusandae in, quae explicabo ea libero! Nostrum porro quia assumenda a consectetur odit, commodi laborum est illum dolorum totam ipsam omnis! Commodi ipsa illo eum labore magnam eius necessitatibus fugit perspiciatis ducimus eos numquam veniam doloremque quis quaerat dolorum, rerum totam, aliquam voluptatibus veritatis atque consequatur ut natus! A non tenetur animi aperiam atque.
+        </p>
+    </div>
+<div>
+    <img src="./preet/imgs/Clearance_store.jpg" alt="">
+</div>
+<div>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus reprehenderit iure temporibus incidunt repellat vitae quo perspiciatis dignissimos itaque, neque consequatur? Perspiciatis enim delectus similique? Veniam dolore nostrum illum voluptas cupiditate repudiandae mollitia id blanditiis quam ratione, officiis similique tempora quo. Velit et alias quos dolorum totam voluptas dolore aliquam consequatur illo officia omnis fugiat quibusdam quis perspiciatis voluptates facilis tempore inventore, doloremque libero dolor distinctio, a quasi dignissimos aliquid?
+    </p>
+</div>
+<div>
+    <img src="./preet/imgs/pic02.jpg" alt="">
+</div>
+</div>
+</body>
+</html>

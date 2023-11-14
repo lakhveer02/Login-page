@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data Management</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 700px;
+            margin: 0 auto;
+            background-color: #95e2c6;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #878f88;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">
+                        <button onclick="showAddForm()">Add Employee</button>
+                    </th>
+                    <th colspan="1">
+                        <div class="m">
+                            <input type="text" id="searchInput" placeholder="Search by Name"
+                                oninput="handleChange();" />
+                            <!-- <button>Search</button> -->
+                        </div>
+                    </th>
+                    <th>
+                        <p id="rowCount">Total Employees: 0</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th onclick="sortTable('id')">ID</th>
+                    <th onclick="sortTable('name')">Name</th>
+                    <th onclick="sortTable('age')">Age</th>
+                    <th onclick="sortTable('salary')">Salary</th>
+                    <th>Edit & Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+        <div id="addForm" style="display: none;">
+            <h2>Add Employee</h2>
+            <form id="Form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <div id="nameError" class="error"></div><br><br>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age">
+                <span id="ageError" class="error"></span><br><br>
+                <label for="salary">Salary:</label>
+                <input type="text" id="salary" name="salary">
+                <span id="salaryError" class="error"><br><br>
+                    <button type="button" onclick="addEmployee()">Add</button>
+            </form>
+
+
+        </div>
+    </div>
+    <script>
+        let currentID = 1;
+        var employees = [];
+        var currentSortColumn = null;
+        var sortAscending = true;
+        function addEmployee() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var salary = document.getElementById("salary").value;
+
+            if (name === "") {
+                document.getElementById("nameError").textContent = "Name is required.";
+                return;
+            }
+
+            if (!/^[A-Za-z\s]+$/.test(name)) {
+                document.getElementById("nameError").textContent = "Only letters are allowed.";
+                return;
+            }
+
+            if (age === "") {
+                document.getElementById("ageError").textContent = "Age is required.";
+                return;
+            }
+
+            if (!/^\d+$/.test(age)) {
+                document.getElementById("ageError").textContent = "Only numbers are allowed.";
+                return;
+            }
+
+            if (salary === "") {
+                document.getElementById("salaryError").textContent = "Salary is required.";
+                return;
+            }
+
+            if (!/^\d+$/.test(salary)) {
+                document.getElementById("salaryError").textContent = "Only numbers are allowed.";
+                return;
+            }
+
+
+            var newEmployee = {
+                id: currentID,
+                name: name,
+                age: age,
+                salary: salary
+            };
+
+            employees.push(newEmployee);
+            displayEmployees();
+            clearForm();
+            currentID++;
+        }
+
+
+        const handleChange = (argument) => {
+            var searchValue = document.getElementById("searchInput").value.toLowerCase();
+            console.log("called", searchValue)
+            var table = document.getElementById("tableBody");
+            var rows = table.querySelectorAll("tr");
+            for (var i = 0; i < rows.length; i++) {
+                var nameCell = rows[i].cells[1];
+                var name = nameCell.textContent.toLowerCase("");
+                if (name.includes(searchValue)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+
+
+        }
+        function sortTable(column) {
+            if (currentSortColumn === column) {
+                sortAscending = !sortAscending;
+            } else {
+                currentSortColumn = column;
+                sortAscending = true;
+            }
+
+            employees.sort((a, b) => {
+                const valueA = a[column];
+                const valueB = b[column];
+
+                if (valueA < valueB) return sortAscending ? -1 : 1;
+                if (valueA > valueB) return sortAscending ? 1 : -1;
+                return 0;
+            });
+            displayEmployees();
+        }
+        function showAddForm() {
+            var addForm = document.getElementById("addForm");
+            addForm.style.display = "block";
+        }
+
+
+        function editEmployee(id) {
+            const employee = employees.find(emp => emp.id === id);
+            if (employee) {
+                const newName = prompt("Enter new name for employee with ID " + id, employee.name);
+                const newAge = parseInt(prompt("Enter new age for employee with ID " + id, employee.age));
+                const newSalary = parseInt(prompt("Enter new salary for employee with ID " + id, employee.salary));
+
+                employee.name = newName;
+                employee.age = newAge;
+                employee.salary = newSalary;
+
+                displayEmployees();
+            }
+        }
+
+        function deleteEmployee(id) {
+            employees = employees.filter(emp => emp.id !== id);
+            displayEmployees();
+        }
+
+        function clearForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("salary").value = "";
+        }
+
+        function displayEmployees() {
+            var tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = "";
+
+            employees.forEach(function (emp) {
+                var newRow = tableBody.insertRow();
+                newRow.innerHTML = `
+                    <td>${emp.id}</td>
+                    <td>${emp.name}</td>
+                    <td>${emp.age}</td>
+                    <td>${emp.salary}</td>
+                    <td>
+                        <button onclick="editEmployee(${emp.id})">Edit</button>
+                        <button onclick="deleteEmployee(${emp.id})">Delete</button>
+                    </td>
+                `;
+            });
+            //     var rowCountElement = document.getElementById("rowCount");
+            // rowCountElement.textContent = "Total Employees: " + employees.length;
+
+
+            var rowCountElement = document.getElementById("rowCount");
+            rowCountElement.textContent = "Total Employees: " + employees.length;
+        }
+
+        displayEmployees();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title></title>
+</head>
+
+<body>
+    <!-- <ul id="output"></ul> -->
+    <p id="output"></p>
+    <script>
+        //for loop
+        /*  // Get a reference to the <ul> element
+          const listElement = document.getElementById("list");
+      
+          // Create an array of items
+          const items = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"];
+      
+          // Loop through the array and create <li> elements
+          for (let i = 0; i < items.length; i++) {
+              const li = document.createElement("li");
+              li.textContent = items[i];
+              listElement.appendChild(li);
+          }*/
+
+
+
+
+
+        //for in
+        /*const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            occupation: "Developer"
+        };
+        const outputElement = document.getElementById("output");
+        for (const property in person) {
+            if (person.hasOwnProperty(property)) {
+                const propertyValue = person[property];
+                outputElement.innerHTML += `<p><strong>${property}:</strong> ${propertyValue}</p>`;
+            }
+        }*/
+
+
+
+
+        //for of
+        /*  const colors = ["Red", "Green", "Blue", "Yellow", "Orange"];
+      
+      const outputElement = document.getElementById("output");
+      
+      // Loop through the elements of the 'colors' array using for...of
+      for (const color of colors) {
+          const li = document.createElement("li");
+          li.textContent = color;
+          outputElement.appendChild(li);
+      }*/
+
+
+        //while
+        /*let count = 1;
+            const outputElement = document.getElementById("output");
+        
+            // Use a while loop to count and display numbers
+            while (count <= 5) {
+                outputElement.innerHTML += `Count: ${count}<br>`;
+                count++;
+            }*/
+        //    // do while
+        //     const outputElement = document.getElementById("output");
+        //     let userInput;
+
+        //     // Use a do...while loop to take user input
+        //     do {
+        //         userInput = prompt("Enter a number (or 'exit' to quit):");
+        //         outputElement.innerHTML += `<p>You entered: ${userInput}</p>`;
+        //     } whiInput !== 'exit');
+
+
+
+        //push
+      /*  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi", "Lemon");
+
+document.getElementById("output").innerHTML = fruits;
+*/
+
+
+
+//pop
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();
+
+document.getElementById("output").innerHTML = fruits;
+
+    </script>
+</body>
+
+</html>

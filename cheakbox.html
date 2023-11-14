@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .check {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .box {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="check">
+        <div class="box">
+            <div>
+                <input type="checkbox" id="selectAll" onclick="selectAllItems()">
+                <label for="selectAll">Select All</label>
+            </div>
+            <div>
+                <input type="checkbox" id="item1" onclick="handleItem('item1')">
+                <label for="item1">Item1</label>
+            </div>
+            <div>
+                <input type="checkbox" id="item2" onclick="handleItem('item2')">
+                <label for="item2">Item2</label>
+            </div>
+            <div>
+                <input type="checkbox" id="item3" onclick="handleItem('item3')">
+                <label for="item3">Item3</label>
+            </div>
+            <div>
+                <input type="checkbox" id="item4" onclick="handleItem('item4')">
+                <label for="item4">Item4</label>
+            </div>
+            <div>
+                <input type="checkbox" id="item5" onclick="handleItem('item5')">
+                <label for="item5">Item5</label>
+            </div>
+          
+        </div>
+    </div>
+
+    <script>
+        function selectAllItems() {
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const individualCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(#selectAll)');
+
+            for (let i = 0; i < individualCheckboxes.length; i++) {
+                individualCheckboxes[i].checked = selectAllCheckbox.checked;
+            }
+        }
+
+        function handleItem(itemId) {
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const itemCheckbox = document.getElementById(itemId);
+
+            if (!itemCheckbox.checked) {
+                selectAllCheckbox.checked = false;
+            }
+            const individualCheckboxes = document.querySelectorAll('input[type="checkbox"]:not(#selectAll)');
+            const allChecked = Array.from(individualCheckboxes).every(checkbox => checkbox.checked);
+            selectAllCheckbox.checked = allChecked;
+        }
+        console.log (selectAll)
+    </script>
+</body>
+
+</html>

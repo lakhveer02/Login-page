@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .container2 {
+        text-align: center;
+    }
+
+    .addBtn {
+        /* padding: 10px; */
+        width: 25%;
+        background: #d9d9d9;
+        color: #555;
+        /* float: left; */
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+    }
+
+    ul li {
+        text-decoration: none;
+        list-style: none;
+        background: #d9d9d9;
+        color: #555;
+    }
+</style>
+
+<body>
+    <div id="myDIV" class="container ">
+        <div class="container2">
+            <h2> To Do</h2>
+            <input type="text" id="myInput" placeholder="Title...">
+            <span onclick="newElement()" class="addBtn">Add</span>
+
+
+            <ul id="list">
+
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("span");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "delete";
+        span.appendChild(txt);
+        myNodelist[i].appendChild(span);
+    }
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function (ev) {
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+        }
+    }, false);
+    var close = document.getElementsByClassName("delete");
+    var i;
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+
+    function newElement() {
+      
+
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+
+        // If the input value is empty, show an alert and don't add the task.
+        if (inputValue === '') {
+            alert("You must write something!");
+        } else {
+            document.getElementById("list").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+
+        // Add the "X" icon (delete button) to the newly added item.
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "delete";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        // Add a click event listener to the "X" icon (delete button) to remove the item when clicked.
+        span.onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+        };
+    }
+
+    // Add a click event listener to the <ul> list to toggle the "checked" class on the clicked <li> item.
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function (ev) {
+        if (ev.target.tagName === 'LI') {
+            ev.target.classList.toggle('checked');
+        }
+    }, false);
+
+    // Loop through all the "X" icons (delete buttons) and add a click event listener to each of them.
+    var close = document.getElementsByClassName("delete");
+    var i;
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+        };
+    }
+
+</script>
+
+</html>

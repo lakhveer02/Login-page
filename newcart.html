@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Tranformation</title>
+    <link rel="stylesheet" href="css/text-transformation.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* header  */
+.header{
+    /* background-color: cadetblue; */
+}
+.header nav{
+    /* border: 2px solid black; */
+    display: flex;
+    /* grid-template-columns: (3,1fr); */
+    /* flex-direction: row; */
+    justify-content: space-between;
+    background-color:cadetblue;
+    text-align: center;
+    align-items: center;
+    /* margin: 10\px 30px; */
+}
+
+li{
+    display: inline;
+    text-align: center;
+    margin: 0px 20px;
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: black;
+    transition: .4s ease;
+}
+a:hover{
+    color: tomato;
+}
+.header nav input{
+    height: 30px;
+    width: 200px;
+    border: none;
+    background-color: lightblue;
+    border-radius: 5px;
+}
+.header nav input[type=text]{
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* main conainer  */
+#content{
+    display: flex;
+    flex-direction: row;
+    /* display: grid;
+    grid-template-columns: (3 ,1fr); */
+    /* justify-content: center; */
+    /* border: 2px solid black; */
+    text-align:justify;
+}
+.item{
+    width: 350px;
+    border: 2px solid black;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius:10px;
+    transition: .4s;
+}
+.item:hover{
+    background-color:skyblue;
+}
+/* js  */
+.arrayImg{
+    width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+.item .name{
+    font-size: 30px;
+    color: darkgoldenrod;
+
+}
+.description{
+    padding: 10px 0px;
+}
+.Btn{
+    height: 30px;
+    width: 150px;
+    margin: 5px;
+    
+}
+.item-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1050px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+.item {
+    width: calc(33.33% - 20px); /* Calculate item width for three items per row */
+    margin: 10px 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <input type="text" placeholder="Search" id="searchInput" onkeyup="searchItems()">
+                </ul>
+               
+
+            </nav>
+        </div>
+        <div class="item-container" id="content">
+            <!-- Items will be dynamically generated here -->
+        </div>
+        
+    </div>
+<!-- <script src="js/text-transformation.js"></script> -->
+<script>
+    
+const items = [
+    {
+        image: 'preet/imgs/pic01.jpg', // Corrected image path
+        name: 'Html',
+        description: 'Html stands for hyper text markup language. It is a programming language.',
+    },
+    {
+        image: 'preet/imgs/pic02.jpg', // Corrected image path
+        name: 'CSS',
+        description: 'CSS stands for Cascading Style Sheets. It is used for styling web pages.',
+    },
+    {
+        image: 'preet/imgs/pic03.jpg', // Corrected image path
+        name: 'JavaScript',
+        description: 'JavaScript is a programming language commonly used for web development.',
+    },
+    {
+        image: 'preet/imgs/pic04.jpg', // Corrected image path
+        name: 'JavaScript',
+        description: 'JavaScript is a programming language commonly used for web development.',
+    }, {
+        image: 'preet/imgs/pic05.jpg', // Corrected image path
+        name: 'JavaScript',
+        description: 'JavaScript is a programming language commonly used for web development.',
+    }, {
+        image: 'preet/imgs/pic05.jpg', // Corrected image path
+        name: 'JavaScript',
+        description: 'JavaScript is a programming language commonly used for web development.',
+    }
+];
+
+const transformText = (element, transformation) => {
+    switch (transformation) {
+        case 'lowercase':
+            element.textContent = element.textContent.toLowerCase();
+            break;
+        case 'uppercase':
+            element.textContent = element.textContent.toUpperCase();
+            break;
+        case 'capitalize':
+            element.textContent = element.textContent.charAt().toUpperCase()+element.textContent.toLowerCase().slice(1);
+            break;
+        default:
+            break;
+    }
+};
+const searchItems = () => {
+    const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+    const content = document.getElementById("content");
+
+    content.innerHTML = ''; // Clear the current content
+
+    items.forEach((value) => {
+        if (value.name.toLowerCase().includes(searchTerm) || value.description.toLowerCase().includes(searchTerm)) {
+            let newDiv = document.createElement('div');
+            newDiv.classList.add('item');
+            newDiv.innerHTML = `
+                <img src="${value.image}" class="arrayImg">
+                <div class="name">${value.name}</div>
+                <div class="description">${value.description}</div>
+                <button onclick="transformText(this.parentElement.querySelector('.description'), 'lowercase')" class="Btn">Lowercase</button>
+                <button onclick="transformText(this.parentElement.querySelector('.description'), 'uppercase')" class="Btn">Uppercase</button>
+                <button onclick="transformText(this.parentElement.querySelector('.description'), 'capitalize')" class="Btn">Capitalize</button>`;
+            content.appendChild(newDiv);
+        }
+    });
+}
+
+const content = document.querySelector(".item-container");
+
+const showItems = () => {
+    items.forEach((value) => {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+            <img src="${value.image}" class="arrayImg">
+            <div class="name">${value.name}</div>
+            <div class="description">${value.description}</div>
+            <button onclick="transformText(this.parentElement.querySelector('.description'), 'lowercase')" class="Btn">Lowercase</button>
+            <button onclick="transformText(this.parentElement.querySelector('.description'), 'uppercase')" class="Btn">Uppercase</button>
+            <button onclick="transformText(this.parentElement.querySelector('.description'), 'capitalize')" class="Btn">Capitalize</button>`;
+        content.appendChild(newDiv);
+    });
+}
+
+showItems();
+
+</script>
+</body>
+</html>

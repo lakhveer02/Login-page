@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validations Data</title>
+    <link rel="stylesheet" href="./Form.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .error{
+            color: red;
+        }
+        .toggle-password{
+        position: relative;
+      }
+      .toggleeye{
+        position: absolute;
+        right: 10px;
+        top:50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <div class="data">
+    <div class="main">
+        <h1>Admin Sign Up</h1>
+    <form id="formdata">
+        <div class="main1">
+         <label class="label" for="inputField" >Name</label><br>
+        <!-- <input  type="text" id="name" name="name" placeholder="Your Name" oninput="validateName(this)" required onkeydown="validateInput(event)">-->
+        <input type="text" id="inputField" name="inputField" oninput="validateInput()" required>
+            <br><br> 
+        <span class="error" id="nameError"  style="font-size: 22px;"></span><br>
+        
+        <label class="label" for="email" placeholder="userexample@gmail.com" >Email</label><br>
+        <input type="email" id="email" name="email" oninput="validateEmail()" required><br><br>
+        <span class="error" id="emailError" style=" font-size: 22px;"></span><br>
+        
+        <div>
+        <!-- <label class="label" for="password">Password</label><br>
+        <input type="password" id="password" name="password" placeholder="At least 8 chracters" required  oninput="validatepassword()"> -->
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" oninput="validatePassword()" required>
+       <span class="toggle-password" onclick="togglePasswordVisibility('password')"><i class="fa fa-eye toggleeye"></i></span><br><br>
+       <span class="error" id="passwordError"  style="font-size: 22px;"></span><br><br> 
+
+<!-- 
+        <label class="label" for="confrm-password">Confirm Password</label>
+        <input type="password" id="confrm-password" name="confrm-password" placeholder="Confirm Password" required  oninput="validatepassword()"> -->
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" oninput="validatePassword()" required>
+        <span class="toggle-password" onclick="togglePasswordVisibility('confirmPassword')"><i class="fa fa-eye toggleeye"></i></span><br><br>
+        <span class="error" id="confirmPasswordError" style="font-size: 22px;" ></span><br><br>  
+        
+    </div>
+       
+    <h4 class="text3">By signing up,you agree to our<br> <a class="text4">Terms of Service</a> and <a class="text4">Privacy Policy</a></h4>
+       <div class="main3">
+        <button type="button" value="submit"  id="submit" disabled onclick="validatebtn()" onfocus="myFunction()">Submit</button>
+    </div>
+      </form>
+    </div>
+</div>
+</body>
+<script src="./Form.js"></script>
+</html>

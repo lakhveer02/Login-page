@@ -1,0 +1,550 @@
+*{
+    /* background-color: red; */
+}
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing:border-box ;
+
+}
+a{
+    text-decoration: none;
+}
+ .main{
+    background-color: white;
+    color: white(240, 248, 255);
+    calc: flex;
+    text-align: center;
+    gap: 30px;
+    justify-content: space-between;
+}
+.dd{
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-right:50px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+}
+/* .html5{
+    justify-content: space-between;
+   margin-top: 200px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+
+   
+} */
+
+.license{
+    justify-content: space-between;
+   margin-top: 50px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+}
+.button{
+    justify-content: space-between;
+   margin-top: 100px;
+    gap: 60px;
+    text-align: center;
+    color: white;
+    /* box-shadow: none;  transition: all 2s infinite ; */
+}
+/* .button:hover{
+    background-color: aliceblue;
+
+}
+     */
+   
+
+.teli{
+    border-left:2px solid white ;
+    border-right: 2px solid white;
+    border-bottom: 1px solid white;
+
+ }
+/* .promo{
+    background-image: url("./preet/imgs/promo.jpg");
+    max-width: 100%;
+    height: 400px;
+    background-repeat: no-repeat;
+    
+    margin-right: 60px;
+    border-radius: 2% ;
+}  */
+.gap{
+    border: 2px solid rgb(225, 219, 219);
+    margin: auto;
+    height: 100px;
+    width: 80%;
+    position: relative;
+    top:160px;
+    border-radius: 5px;
+   background: rgba(255,255,255,0.05);
+}
+.et{
+    margin-top: 5px;
+    justify-content: space-between;
+    text-size-adjust: 5px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+.the{  
+    height: 40px;
+    width: 300px;
+    font-size: 25px;
+}
+
+.my{
+    margin-top: 30px;
+    height: 30px;
+    width: 170px;
+    
+}
+.button button{
+    background-color: transparent;
+    color: blanchedalmond;
+  height: 40px;
+  font-size: 20px;
+  width: 300px;
+}
+
+.html5 h1{
+    color: white;
+}
+.menu-sec a{
+    font-size: 30px;
+    gap: 10px;
+    margin-left: 15px;
+}
+.dd{
+    text-align: cenetr;
+    margin-left: 50px;
+    gap:50px ;
+    
+}
+.dd a{
+    padding: 30px;
+}
+.aa{
+    background-color: red;
+    gap: 10px;
+    margin-left: 15px;
+}
+.share_btn{
+    background-color: tomato;
+}
+.bb{
+
+    gap: 10px;
+    margin-right: 15px;
+}
+.main2{
+    /* calc: flex; */
+    /* gap: 30px;  */
+}
+.hero{
+    height: 100px;
+    width: 100%;
+     background-color: rgb(0,30, 90);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover ;
+}
+.hero .buttons{
+    calc: flex;
+    justify-content: space-between;
+    padding: 10px 60px;
+    color: white;
+}
+.hero .buttons a{
+    text-decoration: none;
+    color: white;
+}
+.dropdown {
+    position: relative;
+    calc: inline-block;
+height: 20px;
+width: 170px;  
+}
+
+  
+  .dropdown-btn {
+     */
+    color: #cf2c2c;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    calc: none;
+    position: absolute;
+    background-color: #821919;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content li {
+    calc: block;
+    height: 40px;
+    width: 170px;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    calc: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #211b1b;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    calc: block;
+  }
+  
+  .nested-dropdown {
+    position: relative;
+  }
+  
+  .nested-dropdown-content {
+    calc: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #4b1212;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .nested-dropdown:hover .nested-dropdown-content {
+    calc: block;
+  }
+ 
+.lakh{
+    
+    justify-content: space-between;
+}
+.sed {
+    align-items: left;
+    /* margin: auto; */
+    font-size: 20px;
+    margin-top: 80px;
+    margin-left: 140px;
+    
+}
+.sed h1{
+    text-align: left;
+}
+
+.sed p{
+    margin-top: 20px;
+    text-align: left;
+}
+.sed{
+     
+     /* margin-top: 140px; */
+     /* margin-left: 80px;    */
+    /* align-items: center; */
+    text-align: left;
+    
+} */
+.boy .footer1 p{
+    text-align: left;
+    color: tomato;
+    margin-top: 20px;
+    
+}
+.footer1{
+    margin-top: 80px;
+}
+.lorem{
+    margin-top: 30px;
+}
+
+.img{
+   
+   /* margin-right: 140px; */
+   /* margin-left: 40px; */
+   justify-content: space-between;
+   calc: flex;
+   height: 300px;
+   width: 750px;
+   margin-top:140px;
+   margin-right: 140px;
+   
+}
+.team4{
+    text-align: left; 
+    calc: flex;
+    margin-top: 40px;
+    
+    
+}
+.magna{
+    height: 60px;
+    width: 240px;
+    margin-top: 40px;
+    font-size: 20px;
+    justify-content: left;
+}
+.Ipsumseddolor{
+    margin-top: 170px;
+    height: 70px;
+    width: 190px;
+
+}
+.paragraph{
+    font-size: 18px;
+    margin-top: 60px;
+}
+.boy{
+    calc: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.bb{
+    color: black;
+}
+.a{
+    text-decoration: none;
+    calc: flex;
+     row-gap: 30px;   
+    justify-content: center;
+}
+.elit{
+    text-align: center;
+    margin-top: 80px;
+    font-size: 30px;
+}
+.same{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    color: #f35858;
+}
+.jp{
+    
+    margin-left: 60px;
+    height: 30px;
+    width: 170px;
+    text-align: center;
+
+}
+.jp p{
+    text-align: center;
+    width: 343px;
+}
+.pic04{
+    margin-left:350px;
+    height: 30px;
+    width: 170px;
+    text-align: center;
+
+}
+
+.img2{
+ margin-top: 80px;
+    margin-right: 800px; 
+    /* margin-left: 40px; */
+    justify-content: space-between;
+    calc: flex;
+ }
+ 
+.img2 p{
+    text-align: center;
+    width: 343px;
+}
+.pic05{
+    margin-left:350px ;
+    height: 30px;
+    width: 170px;
+    text-align: center;
+
+}
+
+.elevate{
+    margin-left: 30px;
+   margin-top: 30px;
+
+
+    color: rgb(14, 13, 13);
+    /* box-shadow: none;  transition: all 2s infinite ; */
+    
+    height: 40px;
+    width: 270px;
+    font-size: 20px;
+}
+.overlay{
+    
+    margin-top: 370px;
+    background-image: url(./preet/imgs/overlay.png);
+    
+    position: relative;
+    width: 100%;
+    height: 700px;
+}
+.dolor{
+    padding-top:30px;
+    position: relative;
+    margin-top: 80px;
+    text-align: center;
+
+}
+.dolor .head{
+    font-size: 40px;
+    margin-top:30px;
+}
+.amet{
+    color: tomato;
+    font-size: 30px;
+}
+.name{
+     calc: flex; 
+    width: 500px;
+    text-align: center;
+    padding-top: 70px;
+    /* background-color: aliceblue ; */
+    margin-left: 70px;
+    
+}
+.name input{
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+}
+.name textarea{
+    width: 400px;
+    margin-top: 50px;
+}
+.massage{
+    margin-left: 8px; 
+    margin-top: 40px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    justify-content: center;
+
+    
+}
+.massage:hover {
+	color: red;
+}
+.clear:hover {
+	color: red;
+}
+.clear{
+    margin-left: 20px; 
+    margin-top: 40px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    justify-content: center;
+}
+.tweet{
+    calc: flex;
+    justify-content: space-between;
+}
+
+.navbar{
+    calc: flex;
+    margin-left: 50px;
+    padding: 10px;
+
+}
+
+.navbar ul li{
+font-size: 20px;
+    calc: inline-block;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.links{
+
+margin-left: 400px;
+font-size: 20px;
+}
+.like{
+    calc: inline-block;
+    height: 30px;
+    width: 70px;
+}
+.back{
+    calc: inline-block;
+    height: 30px;
+    width: 70px;
+}
+.bac{
+    calc: inline-block;
+    height: 30px;
+    width: 200px;
+}
+.mail{
+    margin-left: 20px;
+}
+.text{
+    margin-top: 10px;
+    margin-left: 5%;
+    border-radius: 9px;
+}
+.text textarea{
+    width: 416px;
+    border-radius: 5px;
+}
+.kk{
+    margin-left: 600px;
+    margin-top: -20%;
+    
+    
+}
+.kk ul{
+    list-style: none;
+    font-size: 40px;
+}
+ .kk i{
+    padding: 10px;
+    margin-top: 20px;
+ }
+ 
+.com{
+    font-size: 20px;
+}
+
+.mm{
+    margin-left: 300px;
+    margin-top: -25%;
+    margin-right: 200px;
+    
+}
+.mm ul{
+    list-style: none;
+    font-size: 40px;
+}
+.copy{
+    margin-top: 170px;
+    text-align: center;
+    height: 50px;
+    margin-left: -260px;
+    width: 100%;
+}
+.copy span{
+     padding: 20px; 
+    font-size: 20px;
+    color: gray;
+}
+.copy a{
+    text-decoration: none;
+    color: gray;
+    transition: all 2s inherit;
+}
+.copy a:hover{
+    color: rgb(225, 0, 100);
+}
+

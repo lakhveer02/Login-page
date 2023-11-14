@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #colorDiv {
+            width: 200px;
+            height: 200px;
+            margin-left: 50px;
+            /* margin-right: 100px; */
+            margin-top: 20px;
+            border: solid black 2px;
+            background-color: rgb(244, 242, 242);
+        }
+
+        .main {
+            width: 300px;
+            background-color: rgb(151, 220, 206);
+            margin: auto;
+            text-align: center;
+            color: hsl(0, 0%, 0%);
+            padding: 20px;
+            border-radius: 30px;
+
+        }
+
+
+
+        .box {
+            height: 200px;
+            width: 200px;
+            border: 2px solid black;
+            /* margin-left: 50px;      */
+        }
+
+        #error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <label for="colorInput">Enter a color:</label><br><br>
+        <input type="text" id="colorInput"><br><br>
+        <button onclick="applyColor()">Apply Color</button>
+
+        <div class="colordiv" id="colorDiv"></div><br><br>
+        <p id="error"></p>
+    </div>
+
+
+
+    <script>
+
+
+        function isValidColor(input) {
+            const colorDiv = document.createElement('div');
+            colorDiv.style.color = input;
+            return colorDiv.style.color !== '';
+        }
+
+
+
+        function applyColor() {
+            const colorInput = document.getElementById('colorInput').value;
+            const colorDiv = document.getElementById('colorDiv');
+            const errorElement = document.getElementById('error');
+
+
+            if (isValidColor(colorInput)) {
+                errorElement.textContent = 'done';
+
+                colorDiv.style.backgroundColor = colorInput;
+            }
+
+
+            else if (colorInput === "") {
+                errorElement.textContent = 'Pleas enter a color';
+
+                colorDiv.style.backgroundColor = '';
+            }
+
+
+
+            else {
+
+                errorElement.textContent = 'Invalid color value';
+                colorDiv.style.backgroundColor = '';
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

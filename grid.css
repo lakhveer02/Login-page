@@ -1,0 +1,74 @@
+.grid-container{
+    calc: flex;
+}
+    .item1{height: 250px;
+        width: 300px;
+       background-color: red;
+       border: 10px solid black ;
+    }
+    .item2{height: 250px;
+        width: 300px;
+       background-color:azure;
+       border: 10px solid black ;
+    }
+    .grid34{
+        calc: flex;
+    }
+    .item3{
+        height: 125px;
+        width: 500px;
+        background-color: aqua;
+        border: 10px solid black ;
+    }
+    .item4{
+        height: 125px;
+        width: 650px;
+        background-color: rgb(241, 241, 126);
+        border: 10px solid black;
+    }
+    .grid56{
+        calc: flex;
+    } 
+    .grid57{
+        calc: flex;
+    }
+    .grid58{
+        calc: flex;
+    }
+    
+    .grid11{
+        height: 225px;
+        width: 225px;
+        background-color: rgb(241, 241, 126);
+        border: 10px solid black;
+    }
+    /* .grid12{ 
+        height: 225px;
+        width: 615px;
+        background-color: aliceblue;
+        border: solid black 10px;
+    }  */
+     .grid13{
+        border: 10px solid black;
+        background-color: yellow;
+        height: 225px;
+        width: 615px;
+    } 
+    .grid14{
+        height: 375px;
+        width: 290px;
+        background-color: red;
+        border: 10px solid black;
+    }
+    .grid99{
+        height: 131px;
+        width: 340px;
+        border: 10px solid black;
+        background-color: aqua;
+    }
+    .grid90{
+        height: 131px;
+        width: 500px;
+        background-color: red ;
+        border: 10px solid black;
+    }

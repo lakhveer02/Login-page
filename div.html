@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .mm{
+            width: 300px;
+            height: 300px;
+          background-color: aqua;
+          position: absolute ;
+          margin-top:50px ; 
+
+        }
+
+        .kk {
+            width: 300px;
+            height: 300px;
+
+            background-color: rgb(174, 12, 12);
+        }
+
+        .dd {
+            width: 180px;
+            height: 180px;
+            position: relative;
+            background-color: blue;
+        } */
+
+        div p {
+            /* color: rgb(22, 21, 21);
+            background-color: rgba(198, 191, 191, 0.765);
+            font-family: 'Edu SA Beginner', cursive;
+             border: solid green 2px;
+            border-radius: 3px; 
+            box-shadow: 20px 20px 50px 15px grey;
+            border: 1px solid black; */
+            background-color: lightgoldenrodyellow;
+            column-count: 4;
+            column-gap: 10px;
+            animation: infinite 5s;
+            column-rule: 3px outset hwb(187 51% 8%);
+        }
+
+        /* span,
+        footer {
+            color: hotpink;
+            background-color: rgb(95, 95, 169);
+        } */
+        /* 
+        body {
+            background-image: url(./preet/imgs/pic02.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat
+        } */
+        span {
+            font-weight: bolder;
+        }
+        body{
+            counter-reset: section;
+}h1 {
+  /* Set "subsection" to 0 */
+  counter-reset: subsection;
+}
+
+h1::before {
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
+
+h2::before {
+  counter-increment: subsection;
+  content: counter(section) "." counter(subsection) " ";
+}
+/* z index */
+#myDIV {
+  width:100%;
+  position:absolute;
+  height:300px;
+  background-color:#FFFFFF;
+}
+#myDIV div{
+  width:100px;
+  height:100px;
+  position:absolute;
+  background-color:rgb(136, 145, 231);
+  border:1px solid;
+  opacity:0.5;
+}
+#myBox {
+  position:absolute;
+  background-color:red!important;
+  opacity:1!important;
+  z-index: 0;
+}
+         @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500;600;700&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="kk">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa sequi <span>quidem</span> saepe fugit libero
+            possimus
+            nobis repellendus sint name </perspiciatis> Ullam architecto necessitatibus rerum voluptates vel a
+            placeat eum
+            eius.
+
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed officia minima incidunt quo quod veritatis
+            optio, deleniti doloremque aliquid, blanditiis quidem odit quaerat libero eius corporis architecto
+            voluptatem laborum recusandae?
+
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus saepe pariatur ad
+            necessitatibus
+            optio quis adipisci atque tempore aliquid distinctio esse dolorem ducimus consectetur odio
+            numquam
+            inventore, veritatis aliquam voluptatum?
+            libero laudantium fugit quidem est, amet sapiente, magni perferendis cupiditate aut, delectus natus.
+            Consequatur, natus nihil quisquam illum ea rerum rem cumque, blanditiis omnis commodi vero pariatur,
+            exercitationem similique provident. Ullam sit perspiciatis beatae molestias natus autem fugit excepturi
+            temporibus numquam, sed ad quo ratione, eius impedit a saepe voluptas dolor. Veritatis minus enim mollitia
+             inventore, veritatis aliquam voluptatum?</p>
+        <span>this is span</span>
+    </div>
+    <h1>HTML and CSS</h1>
+    <h2>HTML Tutorial</h2>
+    <h2>CSS Tutorial</h2>
+    <h2>Bootstrap Tutorial</h2>
+    <hr>
+    
+    <h1>JavaScript</h1>
+    <h2>JavaScript Tutorial</h2>
+    <h2>jQuery Tutorial</h2>
+    <h2>JSON Tutorial</h2>
+    <hr>
+    
+    <h1>Server Side</h1>
+    <h2>SQL Tutorial</h2>
+    <h2>PHP Tutorial</h2>
+    <div id="myDIV">
+        <div id="myBox">myBox</div>
+        <div style="top:20px;left:20px;z-index:0;">z-index 0</div>
+        <div style="top:40px;left:40px;z-index:1;">z-index 1</div>
+        <div style="top:60px;left:60px;z-index:2;">z-index 2<div>        
+        <div style="top:80px;left:80px;z-index:3;">z-index 3</div>            
+      </div>
+      
+    
+
+    <footer>this is footer</footer>
+</body>
+
+</html>

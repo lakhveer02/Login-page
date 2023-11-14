@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,300;1,400;1,700&display=swap');
+
+        .main {
+            width: 300px;
+            background-color: rgb(26, 26, 26);
+            margin: auto;
+            text-align: center;
+            color: aliceblue;
+            padding: 20px;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .main h5 {
+            margin: 13px;
+        }
+
+        #nextBtn[disabled] {
+            background-color: #ccc;
+            cursor: not-allowed;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .form-input {
+            /* width: 100%; */
+            margin-bottom: 15px;
+            padding: 1px;
+            text-align: left;
+        }
+
+        .form-input input {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .form-input label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .mail {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        #main2 {
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            /* text-align: center; */
+            color: aliceblue;
+        }
+
+        #main2 img {
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form action="" autocomplete="off" id="myform" onsubmit="return validateForm();">
+            <div id="main2">
+                <img src="./preet/imgs/LogoV4.png" alt="logo">
+                <h5>VoicePing<sup>2.0</sup></h5>
+            </div>
+            <p>Admin Sign Up</p>
+
+            <div id="mail">
+                <div class="form-input">
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" placeholder="Enter Email" oninput="validatemail()">
+                    <span id="emailError" style="color: red;"></span><br>
+
+                </div>
+                <div class="form-input">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Name" oninput="validatename()">
+                    <span id="nameError" style="color: red;"></span><br>
+                </div>
+                <div class="form-input">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter Password"
+                        oninput="validatepassword()">
+                    <span id="passwordError" style="color: red;"></span><br>
+                </div>
+                <div class="form-input">
+                    <label for="password">Conform Password:</label>
+                    <input type="password" id="cpassword" name="cpassword" placeholder="Confirm password"
+                        oninput="validatepassword()">
+                    <span id="confirmpasswordError" style="color: red;"></span><br>
+                </div>
+
+                <div class="form-input">
+                    <h5>By signing up, you agree to our <a href=""> Terms of service</a> and <a href="">Privacy
+                            Policy</a></h5>
+                </div>
+                <br><br>
+                <button id="nextBtn" type="submit" disabled onclick="LocalStorage()">Next<i class="fa fa-arrow-right"
+                        aria-hidden="true"></i></button><br><br>
+                <p style="text-align: center;"> OR </p>
+                <button id="btn"><img src="./preet/imgs/Google_ G _Logo.svg.webp" alt="" style="width: 12px;">Admin Sign
+                    Up With Google</button><br><br>
+                <button id="btn"><img src="./preet/imgs/email-142.png" alt="" style="width: 12px;"> Sign in with
+                    existing account</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email');
+            const name = document.getElementById('name');
+            const password = document.getElementById('password');
+
+            const emailValue = email.value.trim();
+            const nameValue = name.value.trim();
+            const passwordValue = password.value.trim();
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+            console.log('email:', emailValue);
+            console.log('name:', nameValue);
+            console.log('password:', passwordValue);
+
+
+            // Check if the required fields are filled
+            if (emailValue === "" || nameValue === "" || passwordValue === "") {
+                alert("Please fill in all the required fields.");
+                return false;
+            }
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailValue)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                return false;
+            }
+
+            // Validate name length
+            
+            if (nameValue.length < 2) {
+                document.getElementById('nameError').textContent = 'Name must be at least 2characters long.';
+
+                return false;
+            }
+
+
+                     if (passwordValue.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters long.';
+                return false;
+            }
+
+            console.log("Form data:");
+            console.log("Email:", emailValue);
+            console.log("Name:", nameValue);
+            console.log("Password:", passwordValue);
+            console.log("Confirm Password:", cpasswordValue);
+
+            // Prevent form submission
+            return false;
+        }
+
+
+        // Enable the "Next" button when the required fields are filled
+        const formInputs = document.querySelectorAll('#myform input');
+        formInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const isFormValid = Array.from(formInputs).every(input => input.value.trim() !== '');
+                document.getElementById('nextBtn').disabled = !isFormValid;
+            });
+            // var password document.querySelector('.password').value, confirmpassword=document.querySelector('.cpassword').value;
+            // if
+            //     (password==""){
+            //         alert("password are not same")
+            //     }
+
+        });
+
+
+        function validatepassword() {
+            const passwordInput = document.getElementById("password");
+            const cpasswordinput = document.getElementById("cpassword");
+            const cpasswordEle = document.getElementById("confirmpasswordError");
+            const passwordEle = document.getElementById("passwordError");
+  
+            const password = passwordInput.value;
+
+
+            if (!passwordInput.value) {
+                passwordEle.textContent = "Please enter valid Password";
+            } else {
+                passwordEle.textContent = "";
+            }
+            if (!cpasswordinput.value)  {
+                cpasswordEle.textContent="confirm password is requird"
+         }
+         else {
+            cpasswordEle.textContent="";
+         }
+           
+
+        }
+        
+    
+
+
+        function validatemail() {
+            const emailInput = document.getElementById("email");
+            const emailEle = document.getElementById("emailError");
+            const email = emailInput.value;
+            if (emailInput.value === "") {
+                emailEle.textContent = " ";
+            } else if (email.includes("@")) {
+                emailEle.textContent = "Please enter valid email address";
+                emailEle.style.display = "none";
+            }
+            else if (email.value < 5) {
+                emailEle.textContent = "email length is too short address";
+            }
+            else {
+                emailEle.style.display = "inline";
+            }
+        }
+      
+
+        function validatename() {
+            const nameInput = document.getElementById("name");
+            const nameEle = document.getElementById("nameError");
+            const name = nameInput.value;
+            if (nameInput.value === "") {
+                nameEle.textContent = " please enetr name";
+            } else { nameEle.textContent = "";}
+        }
+       
+
+
+        function LocalStorage() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            localStorage.setItem("name", name);
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            localStorage.setItem("cpassword", confirmpassword);
+        }
+    </script>
+</body>
+
+</html>

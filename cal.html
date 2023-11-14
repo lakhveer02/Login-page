@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+</head>
+<script>
+function addition(val){
+    document.getElementById('result').value+=val;
+}
+function cal()
+{
+    var a= document.getElementById('result').value;
+    var b= eval(a);
+    document.getElementById('result').value=b;
+}
+function clr(){
+    document.getElementById('result').value="";
+}
+</script>
+<style>
+    #result{
+            height: 150px;
+            width: 500px;
+            margin-top: 20px;
+            box-shadow:   10px 10px blue;
+            font-size: 30px;
+            text-align: center;
+            border: 10px double hotpink;
+    }
+    .cal{
+            height: 50px;
+            width: 100px;
+            margin-top: 20px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: 25px;
+            background-color: lightblue;
+
+    }
+</style>
+<body>
+    <div>
+    <h1><center>calculater</center></h1>
+    <input type="text" id="result">
+</div>
+<div>
+    <input type="text" class="cal" value="9" onclick="addition('9')">
+    <input type="text" class="cal" value="8" onclick="addition('8')">
+    <input type="text" class="cal" value="7" onclick="addition('7')">
+    <input type="text" class="cal" value="+" onclick="addition('+')">
+      </div>
+      <div>
+    <input type="text" class="cal" value="6" onclick="addition('6')">
+    <input type="text" class="cal" value="5" onclick="addition('5')">
+    <input type="text" class="cal" value="4" onclick="addition('4')">
+    <input type="text" class="cal" value="-" onclick="addition('-')">
+    </div>
+    <div>
+    <input type="text" class="cal" value="3" onclick="addition('3')">
+    <input type="text" class="cal" value="2" onclick="addition('2')">
+    <input type="text" class="cal" value="1" onclick="addition('1')">
+    <input type="text" class="cal" value="*" onclick="addition('*')">
+    </div>
+    <div>
+        <input type="text" class="cal" value="c" onclick="clr()">
+        <input type="text" class="cal" value="0" onclick="addition('0')">
+        <input type="text" class="cal" value="=" onclick="cal()">
+        <input type="text" class="cal" value="/" onclick="addition('/')">
+    </div>
+</body>
+</html>
